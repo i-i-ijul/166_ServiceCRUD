@@ -1,9 +1,7 @@
 import express from 'express'
 import pg, { Pool } from 'pg'
 const app = express()
-const port = 3000
-const { Pool } = pg
- 
+const port = 3000 
 
 app.use(express.json())
 app.use(
