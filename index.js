@@ -31,3 +31,9 @@ app.get('/', (req, res) => {
     });
 });
 
+app.post('/BIODATA/:id', (req, res) => {
+    const { id } = req.params;
+    const { nama, nim, kelas } = req.body;
+
+    pool.
+})
