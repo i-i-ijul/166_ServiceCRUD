@@ -1,0 +1,25 @@
+{
+  "name": "p6",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u00001\u00006\u00006\u0000_\u0000S\u0000e\u0000r\u0000v\u0000i\u0000c\u0000e\u0000C\u0000R\u0000U\u0000D\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i-i-ijul/166_ServiceCRUD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/i-i-ijul/166_ServiceCRUD/issues"
+  },
+  "homepage": "https://github.com/i-i-ijul/166_ServiceCRUD#readme",
+  "dependencies": {
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  }
+}
