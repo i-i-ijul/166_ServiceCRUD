@@ -57,3 +57,7 @@ app.post('/BIODATA/:id', (req, res) => {
         });
 });
 
+app.listen(port, () => {
+    console.log(`App berjalan di port ${port}.`);
+});
+
