@@ -2,6 +2,7 @@ import express from 'express'
 import pg, { Pool } from 'pg'
 const app = express()
 const port = 3000
+const { Pool } = pg
  
 
 app.use(express.json())
@@ -35,5 +36,24 @@ app.post('/BIODATA/:id', (req, res) => {
     const { id } = req.params;
     const { nama, nim, kelas } = req.body;
 
-    pool.
-})
+    pool.query(
+        'UPDATE BIODATA SET NAMA=$1, NIM=$2, KELAS=$3, WHERE ID=$4 RETURNING *',
+        {nama, nim, kelas, id}
+    )
+        .then(result => {
+            if (result.rowCount ===0){
+                return res.status(404).json({
+                    message: "Datanya ga ketemu."
+                });
+            }
+            res.json({
+                message: "Data udah diupdate.",
+                data: result.rows[0]
+            });
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).send('Internal Server Error');
+        });
+});
+
