@@ -18,7 +18,7 @@ const pool = new Pool({
     port: 5432,
 })
 
-app.get('/', (req, res)) => {
+app.get('/', (req, res) => {
     console.log("Test aja: ");
 
     pool.query ('SELECT * FROM BIODATA ORDER BY ID')
@@ -27,6 +27,7 @@ app.get('/', (req, res)) => {
     })
     .catch(err => {
         console.error(err);
-    })
-}
+        res.status(500).send('Internal Server Error');
+    });
+});
 
